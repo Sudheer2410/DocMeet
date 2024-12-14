@@ -5,15 +5,18 @@ import { Link } from "react-router-dom";
 const SpecialityMenu = () => {
   return (
     <div
-      className="flex flex-col items-center gap-4 py-16 text-gray-800"
+      className="flex flex-col items-center gap-4 py-16 text-gray-800 dark:text-gray-200"
       id="speciality"
     >
+      {/* Header Section */}
       <h1 className="text-3xl font-medium">Find by Speciality</h1>
-      <p className="w-1/3 text-center text-sm">
+      <p className="w-4/5 sm:w-1/3 text-center text-sm">
         Simply browse through our extensive list of trusted doctors and schedule
         your appointment hassle-free.
       </p>
-      <div className="flex sm:justify-center gap-4 pt-5 w-full overflow-scroll">
+
+      {/* Specialities List */}
+      <div className="flex sm:justify-center gap-4 pt-5 w-full overflow-auto">
         {specialityData.map((item, index) => (
           <Link
             onClick={() => scrollTo(0, 0)}
@@ -35,3 +38,4 @@ const SpecialityMenu = () => {
 };
 
 export default SpecialityMenu;
+

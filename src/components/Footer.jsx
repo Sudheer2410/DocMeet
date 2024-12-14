@@ -8,7 +8,7 @@ const Footer = () => {
         {/* left section */}
         <div>
           <img className="mb-5 w-40" src={assets.logo} alt="" />
-          <p className="w-full md-w-2/3 text-gray-600 leading-6">
+          <p className="w-full md:w-2/3 text-gray-600 dark:text-white leading-6">
             Need medical assistance or have any queries? Our team of dedicated
             healthcare professionals is here to help. Stay connected for the
             latest health updates and tips. We are committed to providing you
@@ -18,8 +18,8 @@ const Footer = () => {
         </div>
         {/* center section */}
         <div className="">
-          <p className="text-xl font-medium mb-5">Company</p>
-          <ul className="flex flex-col gap-2 text-gray-600 ">
+          <p className="text-xl font-medium mb-5 text-gray-600 dark:text-white">Company</p>
+          <ul className="flex flex-col gap-2 text-gray-600 dark:text-white">
             <li>Home</li>
             <li>About Us</li>
             <li>Contact Us</li>
@@ -28,8 +28,8 @@ const Footer = () => {
         </div>
         {/* right section */}
         <div>
-          <p className="text-xl fornt-medium mb-5  ">Get in touch</p>
-          <ul className="flex flex-col gap-2 text-gray-600 ">
+          <p className="text-xl font-medium mb-5 text-gray-600 dark:text-white">Get in touch</p>
+          <ul className="flex flex-col gap-2 text-gray-600 dark:text-white">
             <li>+91 7396859778</li>
             <li>sudheerchepyala28@gmail.com</li>
           </ul>
@@ -38,8 +38,8 @@ const Footer = () => {
       {/* copyright text */}
       <div>
         <hr />
-        <p className="py-5 text-sm text-center">
-          Copyright @2024 Maaz - All Right Reserved.
+        <p className="py-5 text-sm text-center text-gray-600 dark:text-white">
+          Copyright @2024 Sudheer - All Right Reserved.
         </p>
       </div>
     </div>

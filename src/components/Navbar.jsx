@@ -7,6 +7,13 @@ const Navbar = () => {
 
   const [showMenu, setShowMenu] = useState(false);
   const [token, setToken] = useState(true);
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    document.body.className = newTheme; // Apply the theme to the body element
+  };
 
   return (
     <div className="flex items-center justify-between text-sm py-4 mb-5 border-b border-b-gray-400">
@@ -19,20 +26,31 @@ const Navbar = () => {
       <ul className="hidden md:flex items-start font-medium gap-5">
         <NavLink to="/">
           <li className="py-1">Home</li>
-          <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden" />
         </NavLink>
         <NavLink to="/doctors">
           <li className="py-1">All Doctors</li>
-          <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden" />
         </NavLink>
-        <NavLink to="about">
+        <NavLink to="/about">
           <li className="py-1">About</li>
-          <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden" />
         </NavLink>
-        <NavLink to="contact">
+        <NavLink to="/contact">
           <li className="py-1">Contact</li>
-          <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden" />
         </NavLink>
+
+        {/* Theme Toggle Button */}
+        <div className="flex items-center gap-2">
+          <span className="text-gray-600">Light</span>
+          <label className="relative inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              className="sr-only peer"
+              onChange={toggleTheme}
+              checked={theme === "dark"}
+            />
+            <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+          </label>
+          <span className="text-gray-600">Dark</span>
+        </div>
       </ul>
       <div className="flex items-center gap-4">
         {token ? (
@@ -80,14 +98,14 @@ const Navbar = () => {
         )}
         <img
           onClick={() => setShowMenu(true)}
-          className="w-6 md:hidden "
+          className="w-6 md:hidden"
           src={assets.menu_icon}
           alt=""
         />
-        {/* mobile menu */}
+        {/* Mobile Menu */}
         <div
           className={`${
-            showMenu ? "fixed w-full " : "h-0 w-0"
+            showMenu ? "fixed w-full" : "h-0 w-0"
           } md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all`}
         >
           <div className="flex items-center justify-between px-5 py-6">
@@ -110,7 +128,7 @@ const Navbar = () => {
               <p className="px-4 py-2 rounded inline-block">About</p>
             </NavLink>
             <NavLink onClick={() => setShowMenu(false)} to="/contact">
-              <p className="px-4 py-2 rounded inline-block">Contact </p>{" "}
+              <p className="px-4 py-2 rounded inline-block">Contact </p>
             </NavLink>
           </ul>
         </div>
@@ -120,3 +138,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
