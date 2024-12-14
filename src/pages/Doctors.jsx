@@ -38,9 +38,7 @@ const Doctors = () => {
       <div className="flex flex-col sm:flex-row items-start gap-5 mt-5">
         {/* Filters Toggle Button */}
         <button
-          className={`px-1 py-3 border rounded text-sm transition sm:hidden ${
-            showFilter ? "bg-primary text-white " : ""
-          }`}
+          className={`px-1 py-3 border rounded text-sm transition sm:hidden ${showFilter ? "bg-primary text-white" : ""}`}
           onClick={() => setShowFilter((prev) => !prev)}
         >
           Filters
@@ -48,9 +46,7 @@ const Doctors = () => {
 
         {/* Filters Section */}
         <div
-          className={`flex-col gap-4 text-sm text-gray-600 dark:text-gray-300 ${
-            showFilter ? "flex" : "hidden sm:flex"
-          }`}
+          className={`flex-col gap-4 text-sm text-gray-600 dark:text-gray-300 ${showFilter ? "flex" : "hidden sm:flex"}`}
         >
           {specialties.map((spec) => (
             <p
@@ -60,9 +56,7 @@ const Doctors = () => {
                   ? navigate("/doctors")
                   : navigate(`/doctors/${spec}`)
               }
-              className={`w-full pl-3 py-1.5 pr-16 border border-gray-300 dark:border-gray-600 rounded transition-all cursor-pointer ${
-                speciality === spec ? "bg-indigo-100 dark:bg-gray-700" : ""
-              }`}
+              className={`w-full pl-3 py-1.5 pr-16 border border-gray-300 dark:border-gray-600 rounded transition-all cursor-pointer ${speciality === spec ? "bg-indigo-100 dark:bg-gray-700" : ""}`}
             >
               {spec}
             </p>
@@ -103,3 +97,4 @@ const Doctors = () => {
 };
 
 export default Doctors;
+

@@ -1,4 +1,4 @@
-/* Import Fonts */
+
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
 @tailwind base;
@@ -8,6 +8,7 @@
 * {
   font-family: Outfit;
 }
+
 
 /* Light Theme (Default) */
 body.light {
@@ -27,6 +28,7 @@ body {
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 
 .active hr {
   @apply block;
